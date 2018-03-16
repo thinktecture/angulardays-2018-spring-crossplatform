@@ -32,6 +32,7 @@
     "prod-mobile-ios": "npm run prod && npm run package-mobile-ios",
     "prod-mobile-android": "npm run prod && npm run package-mobile-android",
     "prod-mobile-windows": "npm run prod && npm run package-mobile-windows",
+    "run-mobile-ios": "cd dist/mobile && cordova run ios",
     "run-mobile-android": "cd dist/mobile && cordova run android --device",
     "bundle-report": "webpack-bundle-analyzer dist/web/stats.json"
   },
