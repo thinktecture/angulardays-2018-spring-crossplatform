@@ -4,6 +4,7 @@
 @import '_table.scss';
 @import '_links.scss';
 @import '_loader.scss';
+@import '_utilities';
 
 * {
   box-sizing: border-box;
@@ -27,6 +28,10 @@ body {
 }
 
 router-outlet ~ * {
+  @include media('>=tablet') {
+      height: calc(100% - #{$menu-height});
+  }
+
   width: 100%;
 
   display: block;
