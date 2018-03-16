@@ -6,6 +6,12 @@
   border: 0;
   border-spacing: 0;
 
+  @include media('<tablet') {
+    table-layout: fixed;
+
+    td { word-wrap: break-word; }
+  }
+
   td, th {
     padding: $gap/4;
   }
