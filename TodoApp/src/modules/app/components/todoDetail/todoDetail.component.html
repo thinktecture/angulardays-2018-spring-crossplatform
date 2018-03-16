@@ -1,0 +1,12 @@
+<div class="tt__card" *ngIf="todoItem$ | async as todoItem">
+    <header>
+        <h1>{{ todoItem.text }}</h1>
+    </header>
+    <div class="content camera-image">
+        <img *ngIf="image$ | async as image" [src]="image">
+    </div>
+
+    <button class="tt__fab" (click)="getPicture()">
+        camera_alt
+    </button>
+</div>

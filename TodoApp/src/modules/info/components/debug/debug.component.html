@@ -1,0 +1,15 @@
+<div class="tt__card">
+    <div class="content no-header">
+        <div class="buttons">
+            <button class="button" type="button" (click)="clearDatabase()">Clear database</button>
+        </div>
+        <br>
+        <div class="tt__input tt__input--textarea">
+            <textarea [(ngModel)]="debugInfo" #info rows="5"></textarea>
+        </div>
+        <br>
+        <div>
+            <button class="button" type="button" (click)="clearInfo()">Clear Info</button>
+        </div>
+    </div>
+</div>
