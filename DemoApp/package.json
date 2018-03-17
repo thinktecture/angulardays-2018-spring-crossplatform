@@ -34,6 +34,7 @@
     "prod-mobile-windows": "npm run prod && npm run package-mobile-windows",
     "run-mobile-ios": "cd dist/mobile && cordova run ios",
     "run-mobile-android": "cd dist/mobile && cordova run android --device",
+    "watch-mobile-ios": "cd dist/mobile && concurrently --kill-others \"cdvlive ios\" \"ng build -w -op=www\"",
     "bundle-report": "webpack-bundle-analyzer dist/web/stats.json"
   },
   "private": true,
@@ -63,7 +64,9 @@
     "@types/cordova": "0.0.34",
     "@types/cordova-plugin-device": "1.1.5",
     "@types/node": "9.4.7",
+    "cdvlive": "^1.0.1",
     "codelyzer": "4.2.1",
+    "concurrently": "^3.5.1",
     "cordova": "6.5.0",
     "cordova-icon": "1.0.0",
     "cordova-splash": "1.0.0",
