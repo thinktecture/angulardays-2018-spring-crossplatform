@@ -26,14 +26,4 @@ export class PlatformService {
   public get isElectron(): boolean {
     return this._isElectron;
   }
-
-  constructor() {
-    this.guessPlatform();
-  }
-
-  private guessPlatform(): void {
-    this._iOS = window.cordova && window.cordova.platformId === 'ios';
-    this._isAndroid = window.cordova && window.cordova.platformId === 'android';
-    this._isElectron = window.navigator.userAgent.match(/Electron/) !== null;
-  }
 }
