@@ -34,7 +34,7 @@
     "prod-mobile-windows": "npm run prod && npm run package-mobile-windows",
     "run-mobile-ios": "cd dist/mobile && cordova run ios",
     "run-mobile-android": "cd dist/mobile && cordova run android --device",
-    "watch-mobile-ios": "cd dist/mobile && concurrently --kill-others \"cdvlive ios\" \"ng build -w -op=www\"",
+    "watch-mobile-ios": "cd dist/mobile && concurrently --kill-others \"wait-on http://localhost:3000 && ng build -w -op=www\" \"cdvlive ios\"",
     "bundle-report": "webpack-bundle-analyzer dist/web/stats.json"
   },
   "private": true,
@@ -73,9 +73,11 @@
     "electron-packager": "11.1.0",
     "mkdirp": "0.5.1",
     "ncp": "2.0.0",
+    "npm-run-all": "^4.1.2",
     "rimraf": "2.6.2",
     "tslint": "5.9.1",
     "typescript": ">=2.4.2 <2.7",
+    "wait-on": "^2.1.0",
     "webpack-bundle-analyzer": "2.11.1"
   }
 }
