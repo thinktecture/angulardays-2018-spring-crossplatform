@@ -12,6 +12,10 @@ if (environment.production) {
 const bootstrap = () => platformBrowserDynamic().bootstrapModule(AppModule);
 
 function start() {
+  if(window.cordova) {
+    return document.addEventListener('deviceready', bootstrap);
+  }
+
   window.addEventListener('load', bootstrap);
 }
 

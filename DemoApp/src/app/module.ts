@@ -22,7 +22,7 @@ import {NgProgressModule, NgProgressInterceptor} from 'ngx-progressbar';
 import {NgxElectronModule} from 'ngx-electron';
 import {DesktopIntegrationService} from './services/desktopIntegration';
 import {MirrorComponent} from './components/mirror/mirror';
-import {CameraService} from './services/camera';
+import {CameraService, cameraServiceFactory} from "./services/camera";
 import {DesktopCameraService} from "./services/desktopCamera";
 
 @NgModule({
@@ -54,7 +54,8 @@ import {DesktopCameraService} from "./services/desktopCamera";
     PlatformService,
     DesktopIntegrationService,
     { provide: HTTP_INTERCEPTORS, useClass: NgProgressInterceptor, multi: true },
-    { provide: CameraService, useClass: DesktopCameraService }
+    { provide: CameraService, useFactory: cameraServiceFactory, deps: [PlatformService]
+    }
   ]
 })
 export class AppModule {
